@@ -23,3 +23,12 @@ def palindrome (word)
         end
     end
 end
+
+def beer_song (num_bottles)
+    if num_bottles == 0 
+        p "No more bottles of beer on the wall"
+    else
+    p "#{num_bottles} bottles of beer on the wall"
+    beer_song(num_bottles-1)
+    end
+end
