@@ -4,6 +4,22 @@ def factorial (n)
     n * factorial(n-1)
 end
 
+# def palindrome (word)
+#     if word != word.reverse #works, but not recursion!
+#         return false
+#     elsif
+#         word == word.reverse
+#         return true
+#     end
+# end
 def palindrome (word)
-
+    if word.length == 1 || word.length == 0 #baseline, where it ends
+        true
+    else
+        if word[0] == word[-1]
+            palindrome(word[1..-2])
+        else
+            false
+        end
+    end
 end
