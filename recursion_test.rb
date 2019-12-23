@@ -32,3 +32,13 @@ def beer_song (num_bottles)
     beer_song(num_bottles-1)
     end
 end
+
+def fib(n) #I don't u/s how this works
+    if n == 0 #n=position in the sequence
+        0   #but i don't get why it's adding correctly
+    elsif n ==  #without the set of fib nums
+        1
+    else
+        fib(n-1) + fib(n-2)
+    end
+end
