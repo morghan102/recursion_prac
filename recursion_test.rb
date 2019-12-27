@@ -33,7 +33,7 @@ def beer_song (num_bottles)
     end
 end
 
-def fib(n) #I don't u/s how this works
+def fib (n) #I don't u/s how this works
     if n == 0 #n=position in the sequence
         0   #but i don't get why it's adding correctly
     elsif n ==  #without the set of fib nums
@@ -54,3 +54,27 @@ def flatten (array, results = [])
     results
 end
 
+def roman_numeralize (num, result = "")
+roman_mapping = {
+    1000 => "M",
+    900 => "CM",
+    500 => "D",
+    400 => "CD",
+    100 => "C",
+    90 => "XC",
+    50 => "L",
+    40 => "XL",
+    10 => "X",
+    9 => "IX",
+    5 => "V",
+    4 => "IV",
+    1 => "I"
+}
+return result if num == 0
+roman_mapping.keys.each do |divisor|
+    quotient, modulus = num.divmod(divisor) 
+    #modulus=remainder, quot=result
+    result << roman_mapping[divisor] * quotient
+    return roman_numeralize(roman_mapping, modulus, result) if quotient > 0
+end
+end
