@@ -42,3 +42,15 @@ def fib(n) #I don't u/s how this works
         fib(n-1) + fib(n-2)
     end
 end
+
+def flatten (array, results = [])
+    array.each do |n|
+        if n.class == Array
+            flatten(n, results)
+        else
+            results << n
+        end
+    end
+    results
+end
+
